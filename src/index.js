@@ -1,17 +1,20 @@
-const express = require("express");
+const express = require('express');
 const app = express();
-const userRoute = require("./routes/users.routes");
-const cors = require(true);
-const connectDB = require("./config/db");
+const userRoute = require('./routes/usersroutes');
+const cors = require('cors');
+const connectDB = require('./config/db');
 
-require("dotenv").config();
+
+require('dotenv').config();
 connectDB();
 
+//middlewares
 app.use(cors());
 app.use(express.json());
 
 //routes
-app.get("/", (request, response) => response.send("UCAMP_API"));
+app.get('/', (request, response) => response.send('UCAMP_API'));
+app.use('/user', userRoute);
 
 //servers
 app.listen(process.env.PORT, () => {
