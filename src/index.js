@@ -15,7 +15,7 @@ app.use(express.json());
 //routes
 app.get('/', (request, response) => response.send('UCAMP_API'));
 app.use('/user', userRoute);
-app.use('/product',userProduct);
+// app.use('/product',userProduct);
 
 //servers
 app.listen(process.env.PORT, () => {

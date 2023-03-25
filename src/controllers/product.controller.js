@@ -1,5 +1,7 @@
 //obtain the model that allow modify or generate a database product
 const Products = require ('../models/products');
+// const bcrypts = require ('bcryptjs');
+// const jwt = require ('jsonwebtoken');
 
 
 //get endpoint
