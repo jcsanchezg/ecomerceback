@@ -1,6 +1,7 @@
 const express = require('express');
 const app = express();
 const userRoute = require('./routes/usersroutes');
+const foodProduct = require('./routes/productsroutes')
 const cors = require('cors');
 const connectDB = require('./config/db');
 
@@ -15,7 +16,7 @@ app.use(express.json());
 //routes
 app.get('/', (request, response) => response.send('UCAMP_API'));
 app.use('/user', userRoute);
-// app.use('/product',userProduct);
+app.use('/product',foodProduct);
 
 //servers
 app.listen(process.env.PORT, () => {

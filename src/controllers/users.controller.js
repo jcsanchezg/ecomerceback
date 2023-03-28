@@ -24,7 +24,7 @@ const createUser = async (request, response) => {
   try {
     //create a user with encryp pass
     const newUser = await User.create({ username, email, password : hashedPassword });
-    const payload = {user:{id:createUser._id}}
+    const payload = {user:{id:newUser._id}}
     // response.json(newUser);
 
     // sing jwt
