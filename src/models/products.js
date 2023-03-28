@@ -23,10 +23,10 @@ const ProductSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-});
+},{timestamps:true});
 
 //model
-const Product = mongoose.model("Product", ProductSchema);
+const Product = mongoose.model('Product', ProductSchema);
 
 //export
 module.exports = Product;

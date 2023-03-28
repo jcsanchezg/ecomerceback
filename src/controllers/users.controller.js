@@ -55,7 +55,7 @@ const loginUser = async (request, response)=>{
     const passOk = await bcrypts.compare(password, foundUser.password);
     // if pass is wrong response a message
     if(!passOk){
-      return await response.status(400).json({message:"passdord incorrect"})
+      return await response.status(400).json({message:"passdord incorrect "+foundUser.password+" "+password})
     }
     // if all ok genereate webtoken
     // data for jwt

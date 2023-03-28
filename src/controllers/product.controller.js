@@ -6,11 +6,11 @@ const Products = require ('../models/products');
 //get endpoint
 const getProduct = async (request,response) =>{
     try{
-        const Product = await Products.find({username,email,password});
-        response.json({Products})
+        const product = await Products.find({});
+        response.json({product})
     } catch(error){
         response.status(500).json({
-            message:'there is an error getting products'
+            message:'there is an error getting products', error
         })
     }
 }

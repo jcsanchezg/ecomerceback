@@ -2,7 +2,7 @@ const jwt = require('jsonwebtoken')
 
 module.exports = (request,response,next) => {
     //extract token comes on request
-    const token = request.header('x-auth-token')
+    const token = request.header('Authorization')
 
     //if not token header, return error
     if(!token){
