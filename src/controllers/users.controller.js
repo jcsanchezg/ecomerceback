@@ -16,14 +16,14 @@ const getUser = async (request, response) => {
 
 //create user and need with jwt
 const createUser = async (request, response) => {
-  const { username, email, password } = request.body; //get this data from request
+  const { email, password } = request.body; //get this data from request
   //generate ramdom string to use on password
   const salt = await bcrypts.genSalt(5);
   const hashedPassword = await bcrypts.hash(password,salt);
 
   try {
     //create a user with encryp pass
-    const newUser = await User.create({ username, email, password : hashedPassword });
+    const newUser = await User.create({ email, password : hashedPassword });
     const payload = {user:{id:newUser._id}}
     // response.json(newUser);
 
@@ -90,7 +90,7 @@ const verifyUser = async(resquest,response) => {
 }
 
 //update
-const updateUser = async (request, reponse) => {
+const updateUser = async (request, response) => {
   const { id, username, email, password } = request.body;
 
   try {
